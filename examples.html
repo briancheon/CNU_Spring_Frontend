@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML 태그 사용 예시 — Week 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --primary: #5B4FE8;
+    --primary-light: #EEF0FF;
+    --primary-dark: #3D34C4;
+    --text: #1A1A2E;
+    --text-muted: #5C5C7A;
+    --bg: #F7F8FC;
+    --surface: #FFFFFF;
+    --border: rgba(0,0,0,0.08);
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --radius-lg: 16px;
+    --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    color: var(--text-muted);
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .example-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .example-header {
+    background: var(--primary-light);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .example-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--primary-dark);
+  }
+
+  .example-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .example-body { grid-template-columns: 1fr; }
+  }
+
+  .code-pane {
+    background: #1A1B2E;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  .code-pane pre {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: #E2E8F0;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .preview-pane {
+    background: #F8FAFC;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed var(--border);
+  }
+  
+  .preview-pane h1, .preview-pane h2, .preview-pane h3 {
+    margin-top: 0;
+  }
+
+  /* Syntax Highlighting */
+  .c-tag { color: #FF79C6; }
+  .c-attr { color: #50FA7B; }
+  .c-val { color: #F1FA8C; }
+  .c-text { color: #E2E8F0; }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.85em;
+    background: #F0F0F8;
+    color: var(--primary-dark);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    border: 1px solid #E0DFFF;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <a href="./week-01-class.html" class="back-link">← 강의 노트로 돌아가기</a>
+  
+  <header>
+    <h1>HTML 태그 사용 규칙 및 예시</h1>
+    <p>오른쪽의 코드를 본인의 프로젝트에 맞게 수정해서 사용해 보세요.</p>
+  </header>
+
+  <!-- 텍스트 태그 -->
+  <div class="section">
+    <div class="section-title">1. 구조와 텍스트 태그</div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>제목과 문단 (h1~h6, p)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;h1&gt;</span><span class="c-text">여기는 헤딩 1 (가장 큼)</span><span class="c-tag">&lt;/h1&gt;</span>
+<span class="c-tag">&lt;h3&gt;</span><span class="c-text">여기는 헤딩 3</span><span class="c-tag">&lt;/h3&gt;</span>
+<span class="c-tag">&lt;p&gt;</span><span class="c-text">일반적인 문단(Paragraph)을 
+작성할 때 사용하는 태그입니다.</span><span class="c-tag">&lt;/p&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <h1>여기는 헤딩 1 (가장 큼)</h1>
+          <h3>여기는 헤딩 3</h3>
+          <p>일반적인 문단(Paragraph)을 작성할 때 사용하는 태그입니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>강조하기 (strong, em)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;p&gt;</span>
+  <span class="c-text">이 텍스트는 </span>
+  <span class="c-tag">&lt;strong&gt;</span><span class="c-text">아주 중요합니다</span><span class="c-tag">&lt;/strong&gt;</span><span class="c-text">. 
+  이 텍스트는 </span>
+  <span class="c-tag">&lt;em&gt;</span><span class="c-text">조금 강조합니다</span><span class="c-tag">&lt;/em&gt;</span><span class="c-text">.
+</span><span class="c-tag">&lt;/p&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <p>이 텍스트는 <strong>아주 중요합니다</strong>. 이 텍스트는 <em>조금 강조합니다</em>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 링크와 이미지 -->
+  <div class="section">
+    <div class="section-title">2. 링크와 이미지 태그</div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>다른 페이지로 이동하기 (a)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;a</span> <span class="c-attr">href</span><span class="c-text">=</span><span class="c-val">"https://github.com"</span> 
+   <span class="c-attr">target</span><span class="c-text">=</span><span class="c-val">"_blank"</span><span class="c-tag">&gt;</span>
+  <span class="c-text">GitHub으로 이동하기</span>
+<span class="c-tag">&lt;/a&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <a href="https://github.com" target="_blank">GitHub으로 이동하기</a>
+          <br><br>
+          <small style="color:var(--text-muted)">* target="_blank"를 넣으면 새 창에서 열립니다.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>이미지 넣기 (img)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;img</span> 
+  <span class="c-attr">src</span><span class="c-text">=</span><span class="c-val">"https://via.placeholder.com/150"</span> 
+  <span class="c-attr">alt</span><span class="c-text">=</span><span class="c-val">"프로필 사진 자리표시자"</span>
+  <span class="c-attr">width</span><span class="c-text">=</span><span class="c-val">"100"</span>
+<span class="c-tag">&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <img src="https://via.placeholder.com/150" alt="프로필 사진 자리표시자" width="100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 목록 태그 -->
+  <div class="section">
+    <div class="section-title">3. 목록 (리스트) 태그</div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>순서가 없는 목록 (ul, li)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;h3&gt;</span><span class="c-text">나의 취미</span><span class="c-tag">&lt;/h3&gt;</span>
+<span class="c-tag">&lt;ul&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">음악 감상</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">코딩 배우기</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">독서</span><span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ul&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <h3>나의 취미</h3>
+          <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+            <li>음악 감상</li>
+            <li>코딩 배우기</li>
+            <li>독서</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>순서가 있는 목록 (ol, li)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;h3&gt;</span><span class="c-text">오늘의 할 일</span><span class="c-tag">&lt;/h3&gt;</span>
+<span class="c-tag">&lt;ol&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">HTML 복습하기</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">프로필 페이지 만들기</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">저녁 먹기</span><span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ol&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <h3>오늘의 할 일</h3>
+          <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+            <li>HTML 복습하기</li>
+            <li>프로필 페이지 만들기</li>
+            <li>저녁 먹기</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 입력 폼 태그 -->
+  <div class="section">
+    <div class="section-title">4. 연락처 폼 (사용자 입력 받기)</div>
+
+    <div class="example-card">
+      <div class="example-header">
+        <h3>폼 요소들 (form, input, textarea, button)</h3>
+      </div>
+      <div class="example-body">
+        <div class="code-pane">
+<pre><span class="c-tag">&lt;form&gt;</span>
+  <span class="c-tag">&lt;label</span> <span class="c-attr">for</span><span class="c-text">=</span><span class="c-val">"uname"</span><span class="c-tag">&gt;</span><span class="c-text">이름:</span><span class="c-tag">&lt;/label&gt;</span>
+  <span class="c-tag">&lt;input</span> <span class="c-attr">type</span><span class="c-text">=</span><span class="c-val">"text"</span> <span class="c-attr">id</span><span class="c-text">=</span><span class="c-val">"uname"</span> <span class="c-attr">placeholder</span><span class="c-text">=</span><span class="c-val">"홍길동"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;br&gt;&lt;br&gt;</span>
+
+  <span class="c-tag">&lt;label</span> <span class="c-attr">for</span><span class="c-text">=</span><span class="c-val">"msg"</span><span class="c-tag">&gt;</span><span class="c-text">메시지:</span><span class="c-tag">&lt;/label&gt;</span><span class="c-tag">&lt;br&gt;</span>
+  <span class="c-tag">&lt;textarea</span> <span class="c-attr">id</span><span class="c-text">=</span><span class="c-val">"msg"</span> <span class="c-attr">rows</span><span class="c-text">=</span><span class="c-val">"3"</span><span class="c-tag">&gt;&lt;/textarea&gt;</span>
+  <span class="c-tag">&lt;br&gt;&lt;br&gt;</span>
+
+  <span class="c-tag">&lt;button</span> <span class="c-attr">type</span><span class="c-text">=</span><span class="c-val">"submit"</span><span class="c-tag">&gt;</span><span class="c-text">보내기</span><span class="c-tag">&lt;/button&gt;</span>
+<span class="c-tag">&lt;/form&gt;</span></pre>
+        </div>
+        <div class="preview-pane">
+          <form style="display:flex; flex-direction:column; gap:0.5rem; align-items:flex-start;">
+            <div>
+              <label for="uname">이름:</label>
+              <input type="text" id="uname" placeholder="홍길동" style="padding:0.3rem;">
+            </div>
+            <div style="width:100%">
+              <label for="msg">메시지:</label><br>
+              <textarea id="msg" rows="3" style="width:100%; padding:0.3rem; margin-top:0.2rem;"></textarea>
+            </div>
+            <button type="submit" style="padding:0.4rem 1rem; cursor:pointer;">보내기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
